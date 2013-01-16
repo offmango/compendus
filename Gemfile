@@ -28,12 +28,15 @@ end
 
 group :development do
 	gem 'guard-spork'
+	gem 'rb-fsevent', '~> 0.9.1'
+	gem 'growl'
 end
 
 group :test do
 	gem 'spork'
 	gem 'cucumber-rails', require: false
 	gem 'database_cleaner'
+	gem 'capybara'
 	gem 'shoulda-matchers'
 	gem 'bourne'
 	gem 'evergreen'
