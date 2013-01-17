@@ -1,9 +1,19 @@
 Feature: Sign In
-	In order to manage my ideas
-	As a user
-	I should be able to sign in
+	In order manage ideas
+	A user
+	Should be able to sign in
 
-	Scenario: Sign in with my email address
-		Given I am not signed in
-		When I sign in as "john@example.com"
-		Then I should be signed in as "john@example.com"
+	Scenario: User is not signed up
+    	Given I do not exist as a user
+      	When I sign in with valid credentials
+      	Then I see an invalid login message
+        	And I should be signed out
+
+    Scenario: User signs in successfully
+    	Given PENDING
+      	Given I exist as a user
+        	And I am not logged in
+      	When I sign in with valid credentials
+      	Then I see a successful sign in message
+      	When I return to the site
+      	Then I should be signed in
