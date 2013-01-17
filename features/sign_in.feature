@@ -10,7 +10,6 @@ Feature: Sign In
         	And I should be signed out
 
     Scenario: User signs in successfully
-    	Given PENDING
       	Given I exist as a user
         	And I am not logged in
       	When I sign in with valid credentials
