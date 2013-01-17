@@ -2,7 +2,7 @@
 
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+    :password => "pleaseplease", :password_confirmation => "pleaseplease" }
 end
 
 def find_user
@@ -19,7 +19,7 @@ end
 def create_user
   create_visitor
   delete_user
-  @user = User.create(:email => @visitor[:email], @visitor[:password])
+  @user = User.new(:email => @visitor[:email], :password => @visitor[:password]).save!
 end
 
 def delete_user
